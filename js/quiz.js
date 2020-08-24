@@ -34,12 +34,14 @@ const entries = [
 ];
 
 function addUiProperties(entries) {
-  return entries.map((entry) => produce(entry, (draft) => {
-    entry.open = true;
-    for (const answer of draft.answers) {
-      answer.checked = false;
+  return produce(entries, (draftEntries) => {
+    for (const entry of draftEntries) {
+      entry.open = true;
+      for (const answer of entry.answers) {
+        answer.checked = false;
+      }
     }
-  }));
+  });
 }
 
 function areAnswersCorrect(entry) {
@@ -52,8 +54,8 @@ class RootController {
     this.setEntries = setEntries;
   }
   setAnswerChecked(entryIndex, answerIndex, checked) {
-    const newEntries = produce(this.entries, (draft) => {
-      draft[entryIndex].answers[answerIndex].checked = checked;
+    const newEntries = produce(this.entries, (draftEntries) => {
+      draftEntries[entryIndex].answers[answerIndex].checked = checked;
     });
     this.setEntries(newEntries); // refresh UI
   }
