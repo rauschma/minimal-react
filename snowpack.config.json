@@ -1,0 +1,11 @@
+{
+  "mount": {
+    "html": "/",
+    "js": "/js"
+  },
+  "devOptions": {
+    "open": "none"
+  },
+
+  "// installOptions": { "treeshake": false }
+}
