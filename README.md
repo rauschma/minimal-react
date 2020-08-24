@@ -2,10 +2,12 @@
 
 ## Installation
 
-```
-cd minimal-react
-npm install
-```
+* Download and install [Node.js](https://nodejs.org/en/) (this also installs the npm package manager).
+* Install the npm packages that this repository depends on:
+  ```
+  cd minimal-react
+  npm install
+  ```
 
 ## Running the project
 
@@ -19,6 +21,8 @@ npm install
 * The browser tab is refreshed automatically when you change either HTML or JavaScript code.
 
 ## Building the project
+
+You can also create a stand-alone version of this web app that doesn’t need the development server to run:
 
 ```js
 npm run build
