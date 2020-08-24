@@ -7,19 +7,28 @@ import produce from 'immer';
 
 const entries = [
   {
-    question: 'What is the color?',
+    question: 'When was JavaScript created?',
     answers: [
-      {text: 'Red', correct: true},
-      {text: 'Green', correct: false},
-      {text: 'Blue', correct: false},
+      {text: '1984', correct: false},
+      {text: '1995', correct: true},
+      {text: '2001', correct: false},
     ],
   },
   {
-    question: 'What is this?',
+    question: 'What does “Ecma” mean?',
     answers: [
-      {text: 'Fee', correct: true},
-      {text: 'Fie', correct: false},
-      {text: 'Foe', correct: false},
+      {text: 'European Computer Manufacturers Association', correct: false},
+      {text: 'Enterprise Content Management Association', correct: false},
+      {text: 'Electronic Component Manufacturers Association', correct: false},
+      {text: 'It’s a proper name', correct: true},
+    ],
+  },
+  {
+    question: 'What does “TC39” mean?',
+    answers: [
+      {text: 'Ecma Technical Committee 39', correct: true},
+      {text: 'Ecma Transactions on Computers 39', correct: false},
+      {text: 'Ecma Technical Communications 39', correct: false},
     ],
   },
 ];
