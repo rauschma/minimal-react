@@ -19,26 +19,18 @@ const sections = [
   },
 ];
 
-function addProperties(sections) {
-  const result = [];
-  for (const entry of sections) {
-    result.push({
-      ...entry,
-      expanded: false,
-    });
-  }
-  return result;
+function addUiProperties(sections) {
+  return sections.map((section) => ({
+    ...section,
+    expanded: false,
+  }));
 }
 
 function expandExactlyOneSection(sections, onlyExpandedIndex) {
-  const result = [];
-  for (const [index, entry] of sections.entries()) {
-    result.push({
-      ...entry,
-      expanded: (index === onlyExpandedIndex),
-    });
-  }
-  return result;
+  return sections.map((section, index) => ({
+    ...section,
+    expanded: (index === onlyExpandedIndex),
+  }));
 }
 
 //========== Views
@@ -80,5 +72,5 @@ function Section({sections, setSections, section, sectionIndex}) {
 //========== Entry point
 
 ReactDOM.render(
-  html`<${Sections} sections=${addProperties(sections)} />`,
+  html`<${Sections} sections=${addUiProperties(sections)} />`,
   document.getElementById('root'));
