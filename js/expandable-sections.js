@@ -1,6 +1,6 @@
-import {useState} from 'react';
 import ReactDOM from 'react-dom';
 import {html} from 'htm/react';
+import {useState} from 'react';
 
 //========== Model
 
@@ -33,7 +33,7 @@ function expandExactlyOneSection(sections, onlyExpandedIndex) {
   }));
 }
 
-//========== Views
+//========== Components
 
 function Sections({sections: initialSections}) {
   const [sections, setSections] = useState(initialSections);
