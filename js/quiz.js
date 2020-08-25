@@ -67,7 +67,7 @@ class RootController {
   }
 }
 
-//========== Views
+//========== Components
 
 function Quiz({entries: initialEntries}) {
   const [entries, setEntries] = useState(initialEntries);
@@ -98,6 +98,8 @@ function AllEntries({root, entries}) {
       <${entryKind} key=${index} root=${root} entry=${entry} entryIndex=${index} />`
   });
 }
+
+//----- OpenEntry
 
 function OpenEntry({root, entry, entryIndex}) {
   return html`
@@ -133,6 +135,8 @@ function OpenAnswer({root, answer, entryIndex, answerIndex}) {
   }
 }
 
+//----- ClosedEntry
+
 function ClosedEntry({root, entry, entryIndex}) {
   return html`
     <div>
@@ -161,6 +165,8 @@ function ClosedAnswer({root, answer, entryIndex, answerIndex}) {
     </div>
   `;
 }
+
+//========== Entry point
 
 ReactDOM.render(
   html`<${Quiz} entries=${addUiProperties(entries)} />`,
