@@ -88,29 +88,32 @@ function Summary({entries}) {
   const numberOfCorrectEntries = entries.reduce(
     (acc, entry) => acc + (!entry.open && areAnswersCorrect(entry) ? 1 : 0), 0);
   return html`
-    ${numberOfCorrectEntries} of ${numberOfClosedEntries} ${numberOfCorrectEntries === 1 ? 'entry is' : 'entries are'} correct.`;
+    ${numberOfCorrectEntries} of ${numberOfClosedEntries}
+    ${numberOfCorrectEntries === 1 ? 'entry is' : 'entries are'} correct.
+  `;
 }
 
 function AllEntries({root, entries}) {
   return entries.map((entry, index) => {
     const entryKind = entry.open ? OpenEntry : ClosedEntry;
     return html`
-      <${entryKind} key=${index} root=${root} entry=${entry} entryIndex=${index} />`
+      <${entryKind} key=${index} root=${root} entryIndex=${index} entry=${entry} />`
   });
 }
 
 //----- OpenEntry
 
-function OpenEntry({root, entry, entryIndex}) {
+function OpenEntry({root, entryIndex, entry}) {
   return html`
     <div>
       <h2>${entry.question}</h2>
       ${
         entry.answers.map((answer, index) => html`
-          <${OpenAnswer} key=${index} root=${root} entryIndex=${entryIndex} answer=${answer} answerIndex=${index} />
+          <${OpenAnswer} key=${index} root=${root}
+            entryIndex=${entryIndex} answerIndex=${index} answer=${answer} />
         `)
       }
-      <p><button onClick=${handleClick}>Submit</button></p>
+      <p><button onClick=${handleClick}>Submit answers</button></p>
     </div>`;
 
   function handleClick(event) {
@@ -119,7 +122,7 @@ function OpenEntry({root, entry, entryIndex}) {
   }
 }
 
-function OpenAnswer({root, answer, entryIndex, answerIndex}) {
+function OpenAnswer({root, entryIndex, answerIndex, answer}) {
   return html`
     <div>
       <label>
@@ -137,7 +140,7 @@ function OpenAnswer({root, answer, entryIndex, answerIndex}) {
 
 //----- ClosedEntry
 
-function ClosedEntry({root, entry, entryIndex}) {
+function ClosedEntry({root, entryIndex, entry}) {
   return html`
     <div>
     <h2>${entry.question}</h2>
@@ -154,7 +157,7 @@ function ClosedEntry({root, entry, entryIndex}) {
     </div>`;
 }
 
-function ClosedAnswer({root, answer, entryIndex, answerIndex}) {
+function ClosedAnswer({root, entryIndex, answerIndex, answer}) {
   const style = answer.correct ? {backgroundColor: 'lightgreen'} : {};
   return html`
     <div>
