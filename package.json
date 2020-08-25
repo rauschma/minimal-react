@@ -1,14 +1,10 @@
 {
-  "name": "simple-react",
+  "name": "minimal-react",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@snowpack/plugin-react-refresh": "^2.1.0",
     "snowpack": "^2.9.0"
