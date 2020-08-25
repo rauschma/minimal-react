@@ -6,6 +6,7 @@
   "devOptions": {
     "open": "none"
   },
-
-  "// installOptions": { "treeshake": false }
+  "// devOptions": [
+    "Switch off automatic opening of browser tabs"
+  ]
 }
