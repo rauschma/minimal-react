@@ -1,5 +1,7 @@
 # Minimal React project
 
+Trying out the examples online: https://rauschma.github.io/minimal-react/build/
+
 ## Installing the examples on your computer
 
 * Download and install [Node.js](https://nodejs.org/en/) (this also installs the npm package manager).
