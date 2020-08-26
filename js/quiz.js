@@ -88,8 +88,8 @@ function Summary({entries}) {
   const numberOfCorrectEntries = entries.reduce(
     (acc, entry) => acc + (!entry.open && areAnswersCorrect(entry) ? 1 : 0), 0);
   return html`
-    ${numberOfCorrectEntries} of ${numberOfClosedEntries}
-    ${numberOfCorrectEntries === 1 ? 'entry is' : 'entries are'} correct.
+    Correct: ${numberOfCorrectEntries} of ${numberOfClosedEntries}
+    ${numberOfClosedEntries === 1 ? ' entry' : ' entries'}
   `;
 }
 
