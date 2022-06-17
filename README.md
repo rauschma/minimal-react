@@ -39,4 +39,4 @@ This is an exhaustive list of dependencies:
 * [Snowpack](https://www.snowpack.dev): `snowpack`, `@snowpack/plugin-react-refresh`
 * [React](https://reactjs.org): `react`, `react-dom`
 * [HTM](https://github.com/developit/htm): `htm`
-* [Immer](https://immerjs.github.io/immer/docs/introduction): `immer`
+* [Immer](https://immerjs.github.io/immer/): `immer`
